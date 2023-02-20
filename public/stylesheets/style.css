@@ -34,3 +34,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }  
+  .card img{
+    width: 18rem !important;
+    height: 10rem !important;
+  }
+  .main{
+    padding: 100px 20px;
+  }
+  .centered-admin{
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .centered-admin p{
+    font-size:  2rem;
+    font-weight: 600;
+  }

@@ -7,36 +7,25 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card-body p-5 mt-5">
-            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-
-            <form action="/signup" method="post">
-
+            <h2 class="text-uppercase text-center mb-5">Login</h2>
+            <form action="login" method="post">
               <div class="form-outline mb-4">
+                {{#if adminErr}}
+                  <p class="text-danger">Invalid User</p>
+                {{/if}}
                 <input
-                  type="text"
-                  id="form3Example1cg"
+                  type="email validationServer01"
+                  id="form3Example3cg"
                   class="form-control form-control-lg"
                   name="username"
                   required
                 />
-                <label class="form-label" for="form3Example1cg">Your Name</label>
+                <label class="form-label" for="form3Example3cg">Enter username</label>
               </div>
-
-              <div class="form-outline mb-4">
-                {{#if userStatus}}
-                  <p class="text-danger">Email allready exists</p>
+              <div class="form-outline mb-4" aria-required="true">
+                {{#if passErr}}
+                  <p class="text-danger">Incorrect Password</p> 
                 {{/if}}
-                <input
-                  type="email"
-                  id="form3Example3cg"
-                  class="form-control form-control-lg"
-                  name="email"
-                  required
-                />
-                <label class="form-label" for="form3Example3cg">Your Email</label>
-              </div>
-
-              <div class="form-outline mb-4">
                 <input
                   type="password"
                   id="form3Example4cg"
@@ -46,30 +35,18 @@
                 />
                 <label class="form-label" for="form3Example4cg">Password</label>
               </div>
-
-              {{!-- <div class="form-outline mb-4">
-                <input
-                  type="password"
-                  id="form3Example4cdg"
-                  class="form-control form-control-lg"
-                  required
-                />
-                <label class="form-label" for="form3Example4cdg">Repeat your
-                  password</label>
-              </div> --}}
-
               <div class="form-check d-flex justify-content-center mb-5">
                 <input
                   class="form-check-input me-2"
                   type="checkbox"
                   value=""
                   id="form2Example3cg"
-                  name="checked"
+                  name="checkbox"
                   required
                 />
                 <label class="form-check-label" for="form2Example3g">
                   I agree all statements in
-                  <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  <a href="" class="text-body"><u>Terms of service</u></a>
                 </label>
               </div>
 
@@ -77,12 +54,9 @@
                 <button
                   type="submit"
                   class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                >Register</button>
+                >Login</button>
               </div>
 
-              <p class="text-center text-muted mt-5 mb-0">Have already an
-                account?
-                <a href="login" class="fw-bold text-body"><u>Login here</u></a></p>
 
             </form>
 

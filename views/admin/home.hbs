@@ -1,0 +1,28 @@
+<section class="mt-5">
+    <div class="container">
+       <div class="mt-4 col-md-4 pt-5 ms-auto">
+            <a href="/admin/addUser" class=" btn btn-success  mb-4">Add User</a>
+        </div>
+        <table class="table mt-5" id="userTable">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <td>{{this.username}}</td>
+      <td>{{this.email}}</td>
+      <td>
+        <a href="/admin/editUser/{{this._id}}" class="btn btn-warning">Edit</a>
+        <a href="/admin/deleteUser?id={{this._id}}" class="btn btn-danger" onclick=" return confirm('Do you want to Delete {{this.username}} ?')">Delete</a>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
+    </div>
+</section>
+
+

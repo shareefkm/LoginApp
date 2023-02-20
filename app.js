@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('express-handlebars')
+const session = require('express-session')
+const nocache = require('nocache')
 
 
 var userRouter = require('./routes/user');
@@ -22,6 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({secret:'Key',cookie:{maxAge:200000}}))
+app.use(nocache())
 
 db.connect((err)=>{
   if(err)
